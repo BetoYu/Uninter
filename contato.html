@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Título da página-->
+  <title>Portfólio - Roberto Yuri</title>
+  <!--Link do arquivo css de estilo-->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+  <div id="topo"><!--Div extra pra ser link com o final da página--></div>
+
+  <!--O cabeçalho da página fica sempre visível na tela-->
+  <div class="container fixed">
+    <div class="linha"> <!--Linha divisória--> </div>
+    <header class="">
+      <h1 style="text-align: center;">P<span>ortfólio -</span> R<span>oberto </span>Y<span>uri</span></h1>
+    </header>
+    <div class="linha"> <!--Linha divisória--> </div>
+  </div>
+
+  <!--Área do conteiner principal-->
+  <div class="container wrapper">
+    <!--Este menu fica fixo à esquerda da página
+      até o tamanho da janela ficar pequeno demasiado-->
+    <aside class="menu">
+      <div class="logo">
+        <a href="index.html"><img src="img/logo.jpeg" alt="logo do perfil"></a>
+      </div>
+      <nav class="menu-links" id="menu-links">
+        <ul>
+          <li><a href="index.html">Sobre Mim</a></li>
+          <li><a href="formacao.html">Formação</a></li>
+          <li><a href="portfolio.html">Portfólio</a></li>
+          <li><a href="contato.html">Contato</a></li>
+      </nav>
+    </aside>
+
+    <!--Formulário para preenchimento das informações para entrar em contato-->
+    <section class="principal"> <!--Uma sessão do meu site-->
+      <section class="formulario" style="text-align: center;">
+        <div class="interface">
+          <h2 class="titulo">Entre em contato</h2>
+          <br>
+          <!--Para evitar e-mails desnecessários, não será preenchido o e-mail destinatário-->
+          <form action="">
+            <input type="texto" name="" id="" placeholder="Seu nome completo" required>
+            <input type="texto" name="" id="" placeholder="Seu e-mail" required>
+            <input type="texto" name="" id="" placeholder="Seu celular">
+            <textarea name="" id="" placeholder="Sua mensagem" required></textarea>
+            <div class="enviar"><input type="submit" value="ENVIAR"></div>
+          </form>
+        </div>
+      </section>
+  </div>
+  </section>
+  </div>
+
+  <!--Código pra criar o efeito do menu
+    (enquando o mouse está no item,
+    ele vai destacar este e tirar foco dos outros itens)-->
+  <script>
+    var listItems = document.querySelectorAll('#menu-links li');
+
+    for (var i = 0; i < listItems.length; i++) {
+      listItems[i].addEventListener('mouseover', function () {
+        for (var j = 0; j < listItems.length; j++) {
+          if (listItems[j] !== this) {
+            listItems[j].classList.add('dim');
+          }
+        }
+      });
+
+      listItems[i].addEventListener('mouseout', function () {
+        for (var j = 0; j < listItems.length; j++) {
+          listItems[j].classList.remove('dim');
+        }
+      });
+    }    
+  </script>
+
+  <!--Código comentado, usado só pra saber quantos pixels tem na janela do navegador durante o desenvolvimento
+    window.onload = function () {
+      var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      document.getElementById('topo').innerHTML += ": " + width + "px";
+    }-->
+
+</body>
+
+</html>

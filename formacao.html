@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Título da página-->
+  <title>Portfólio - Roberto Yuri</title>
+  <!--Link do arquivo css de estilo-->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+  <div id="topo"><!--Div extra pra ser link com o final da página--></div>
+
+  <!--O cabeçalho da página fica sempre visível na tela-->
+  <div class="container fixed">
+    <div class="linha"> <!--Linha divisória--> </div>
+    <header class="">
+      <h1 style="text-align: center;">P<span>ortfólio -</span> R<span>oberto </span>Y<span>uri</span></h1>
+    </header>
+    <div class="linha"> <!--Linha divisória--> </div>
+  </div>
+
+  <!--Área do conteiner principal-->
+  <div class="container wrapper">
+    <!--Este menu fica fixo à esquerda da página
+      até o tamanho da janela ficar pequeno demasiado-->
+    <aside class="menu">
+      <div class="logo">
+        <a href="index.html"><img src="img/logo.jpeg" alt="logo do perfil"></a>
+      </div>
+      <nav class="menu-links" id="menu-links">
+        <ul>
+          <li><a href="index.html">Sobre Mim</a></li>
+          <li><a href="formacao.html">Formação</a></li>
+          <li><a href="portfolio.html">Portfólio</a></li>
+          <li><a href="contato.html">Contato</a></li>
+      </nav>
+    </aside>
+
+    <!--Esta parte fica movimentando ao lado do menu.
+       As imagens podem mudar a posição de acordo com o tamanho da janela-->
+    <section class="principal"> <!--Uma sessão do meu site-->
+      <div class="texto1">
+        <h1>Formação Educacional e Idiomas</h1>
+      </div>
+      <div class="texto"><!--Div extra pra espaçamento--></div>
+      <div class="texto2">
+        <P>Possuo uma formação acadêmica robusta e diversificada, refletindo meu compromisso com o aprendizado
+          contínuo e a excelência profissional. Com fluência em inglês avançado e conhecimentos de francês básico,
+          sou capaz de me comunicar efetivamente em um ambiente globalizado, o que amplia minhas perspectivas e
+          oportunidades.</p>
+      </div>
+
+      <div class="img"><img src="img/globalizado.jpeg" alt="Perfil do topo do site"></div>
+
+      <div class="texto1">
+        <p>No campo da engenharia, concluí com sucesso duas graduações distintas e complementares.
+          Minha primeira conquista foi o diploma em Engenharia de Segurança do Trabalho,
+          onde adquiri conhecimentos fundamentais para garantir a segurança e o bem-estar no ambiente laboral.
+          Em seguida, expandi minha expertise técnica com a graduação em Engenharia de Agrimensura,
+          uma área que exige precisão e atenção aos detalhes, qualidades que demonstro com maestria.</p>
+      </div>
+
+      <div class="img"> <img src="img/engenharia.jpeg" alt="Perfil do topo do site"></div>
+
+      <div class="texto2">
+        <p>Atualmente, estou empenhado em aprofundar minhas habilidades no setor de tecnologia através do curso
+          de Análise e Desenvolvimento de Sistemas. Esta nova jornada acadêmica é um testemunho de minha paixão
+          pela inovação e pelo desejo de estar na vanguarda das soluções tecnológicas.</p>
+      </div>
+
+      <div class="img"> <img src="img/technologia.jpeg" alt="Perfil do topo do site"></div>
+
+      <div class="texto1">
+        <P>A combinação de minha formação em engenharia e a atual especialização em sistemas de informação
+          me posiciona como um profissional único, pronto para enfrentar os desafios do futuro e contribuir
+          significativamente para o avanço da tecnologia e da sociedade.</p>
+      </div>
+
+      <div class="img"> <img src="img/futuro.jpeg" alt="Perfil do topo do site"></div>
+      <br><br>
+  </div>
+  </section>
+  </div>
+
+  <!--Código pra criar o efeito do menu
+    (enquando o mouse está no item,
+    ele vai destacar este e tirar foco dos outros itens)-->
+  <script>
+    var listItems = document.querySelectorAll('#menu-links li');
+
+    for (var i = 0; i < listItems.length; i++) {
+      listItems[i].addEventListener('mouseover', function () {
+        for (var j = 0; j < listItems.length; j++) {
+          if (listItems[j] !== this) {
+            listItems[j].classList.add('dim');
+          }
+        }
+      });
+
+      listItems[i].addEventListener('mouseout', function () {
+        for (var j = 0; j < listItems.length; j++) {
+          listItems[j].classList.remove('dim');
+        }
+      });
+    }    
+  </script>
+
+  <!--Código comentado, usado só pra saber quantos pixels tem na janela do navegador durante o desenvolvimento
+    window.onload = function () {
+      var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      document.getElementById('topo').innerHTML += ": " + width + "px";
+    }-->
+
+  <!--Rodapé-->
+  <footer class="">
+    <div class="linha"> <!--Linha divisória--> </div>
+    <!--Link pra subir pro topo da página-->
+    <h3><a href="#topo">Ir pro topo</a></h3>
+    <div class="linha"> <!--Linha divisória--> </div>
+  </footer>
+</body>
+
+</html>

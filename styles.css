@@ -1,0 +1,348 @@
+/* Estilos genéricos do site */
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+  box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/*Estilo geral para títulos*/
+h1 {
+  color: rgb(19, 163, 113);
+  font-size: 2em;
+}
+
+/*Estilo geral para títulos*/
+h2, h3 {
+  color: rgb(19, 163, 113);
+}
+
+/*Aplicando a cor de fundo principal do site*/
+body {
+  color: white;
+  background-color: #000;
+}
+
+/*Criação do grid do conteiner*/
+.container {
+  display: grid;
+  grid-template-columns: repeat(100, 1fr);
+}
+
+/*Estilo para colorir o texto*/
+.principal div.texto1 p {
+  padding: 5px 0px;
+  color: rgb(102, 194, 162);
+}
+
+
+/*Padrões das áreas fixas na tela*/
+.fixed {
+  margin: 1%;
+  margin-top: 0;
+  position: fixed;
+  width: 100%;
+  background-color: #000;
+}
+
+/*Criação das linhas do topo e do fim do site*/
+div.linha {
+  grid-column-start: 1;
+  grid-column-end: 99;
+  border-bottom: 2px solid #00ff0d;
+}
+
+/*Arrumação do cabeçalho da página*/
+header {
+  margin-bottom: 0;
+  grid-column-start: 1;
+  grid-column-end: 99;
+  font-size: 24px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Padronização da logo no menu fixo*/
+div.logo img {
+  margin-left: 10%;
+  max-width: 100px;
+  border-radius: 35%;
+}
+
+/*Posicionando o menu lateral*/
+.menu {
+  position: fixed;
+  padding-top: 92px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+/*Detalhando a área principal do texto*/
+.principal {
+  max-width: 1440px;
+  padding-top: 92px;
+  grid-column-start: 12;
+  grid-column-end: 99;
+  text-align: justify;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 16px;
+}
+
+/*Arrumando as imagens do texto*/
+.principal img {
+  max-width: 100%;
+  padding-left: 10%;
+  border-radius: 16%;
+}
+
+/*Determinando o rodapé*/
+footer {
+  grid-column-start: 1;
+  grid-column-end: 100;
+  background-color: #506E6A;
+  color: white;
+  text-align: center;
+}
+
+/*Tirando a marcação dos itens da lista do menu*/
+ul {
+  list-style-type: none;
+}
+
+/*Arrumando o espaçamento dos itens do menu*/
+.menu-links {
+  padding: 8px 25px;
+}
+
+/*Definindo o padrão de cor e alinhamento do menu*/
+nav.menu-links a,
+li {
+  margin: 7px 0;
+  color: #00ff0d;
+  text-decoration: none;
+  transition: .7s;
+}
+
+/*Ajustando o desfocamento do menu*/
+li.dim {
+  opacity: 0.5;
+  transition: .7s;
+}
+
+/*Implantando o destaque no menu quando o mouse está no item*/
+nav.menu-links a:hover {
+  color: white;
+  display: block;
+  transform: scale(1.17);
+  transform-origin: left;
+}
+
+/*Posicionando o formulário*/
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+/*Acrescentando a cor do texto informativo no formulário*/
+::placeholder {
+  color: rgb(53, 53, 53);
+  font-weight: 500;
+}
+
+/*Ajeitando a área de preenchimento do formulário*/
+form input,
+form textarea {
+  background-color: #506E6A;
+  border: 0;
+  outline: 0;
+  padding: 16px 12px;
+  border-radius: 7px;
+  color: white;
+  font-size: 16px;
+}
+
+/*Definindo os padrões do botão de enviar*/
+form .enviar input {
+  width: 120px;
+  background-color: #00ff0d;
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .2s;
+}
+
+/*Criando efeito no botão de enviar*/
+form .enviar input:hover {
+  transform: scale(1.07);
+  font-size: 20px;
+}
+
+/*Definições pra mudança de tamanho da janela em 1280 pixels*/
+@media (max-width: 1280px) {
+
+  /*Arrumando o espaçamento no menu*/
+  .menu {
+    padding-top: 85px;
+  }
+
+  /*Redefinindo o tamanho da fonte h1*/
+  h1 {
+    font-size: 1.7em;
+  }
+
+  /*Arrumando o espaçamento do texto principal*/
+  .principal {
+    padding-top: 85px;
+    grid-column-start: 14;
+  }
+
+  /*Ajustando o espaçamento das imagens no texto principal*/
+  .principal img {
+    padding-left: 5%;
+  }
+}
+
+/*Adaptando os padrões pra nova resolução a partir de 900  pixels*/
+@media (max-width: 900px) {
+
+  /*Mudando o espaçamento do menu*/
+  .menu {
+    padding-top: 77px;
+  }
+
+  /*Reconfigurando o tamanho da fonte h1*/
+  h1 {
+    font-size: 1.5em;
+  }
+
+  /*Aperfeiçoando o posicionamento do texto principal*/
+  .principal {
+    padding-top: 77px;
+    grid-column-start: 16;
+    grid-template-columns: 1fr;
+  }
+
+  /*Centralizando as imagens do texto principal após mudança de posicionamento*/
+  .principal div.img {
+    text-align: center;
+  }
+}
+
+/*Adaptando os padrões pra 800 pixels de janela*/
+@media (max-width: 800px) {
+
+  /*Diminuindo o espaçamento do menu pro cabeçalho*/
+  .menu {
+    padding-top: 70px;
+  }
+
+  /*Reformatando o texto principal com o posicionamento do menu e cabeçalho*/
+  .principal {
+    padding-top: 70px;
+    grid-column-start: 18;
+  }
+}
+
+/*Readaptando a página para 720 pixels de janela*/
+@media (max-width: 720px) {
+
+  /*Modificando a fonte h1*/
+  h1 {
+    font-size: 1.4em;
+  }
+
+  /*Afastando o texto principal do menu lateral*/
+  .principal {
+    grid-column-start: 20;
+  }
+}
+
+/*Modificando o site quando a janela vai pra 640 pixels*/
+@media (max-width: 640px) {
+
+  /*Desativando o grid do conteiner para a página mudar o tipo de exibição*/
+  .container {
+    display: unset;
+  }
+
+  /*Tirando o menu fixo da lateral e colocando-o no topo da página sem fixamento*/
+  .menu {
+    padding-top: 64px;
+    display: flex;
+    position: unset;
+    margin: 5%;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    border-right: unset;
+  }
+
+  /*Configurando o texto principal ao novo padrão*/
+  .principal {
+    padding-top: 16px;
+    margin: 2%;
+    border-top: 1px solid #00ff0d;
+  }
+
+  /*Reposicionando os itens no menu*/
+  .menu-links {
+    margin: 5%;
+    margin-top: 0;
+  }
+
+  /*Adaptando a interatividade ao novo menu*/
+  nav.menu-links a,
+  li {
+    margin-right: 12%;
+    width: 90px;
+    display: inline-block;
+  }
+}
+
+/*Ajustando a página à janela com 540 pixels*/
+@media (max-width: 540px) {
+
+  /*Subindo um pouco o menu para mais perto do cabeçalho*/
+  .menu {
+    padding-top: 57px;
+  }
+
+  /*Adaptando o tamanho da fonte h1*/
+  h1 {
+    font-size: 1.2em;
+  }
+
+  /*Diminuindo as margens dos itens do menu para ter melhor adaptação à nova resolução*/
+  nav.menu-links a,
+  li {
+    margin-right: 10%;
+  }
+}
+
+/*Atribuindo novos padrões para janela em 480 pixels*/
+@media (max-width: 480px) {
+
+  /*Removendo as margens do menu para adequar à largura disponível na janela*/
+  .menu {
+    margin: 0;
+  }
+
+  /*Readaptando os itens do menu ao próprio*/
+  .menu-links {
+    margin: 0;
+  }
+
+  /*Apertando um pouco mais os itens no menu*/
+  nav.menu-links a,
+  li {
+    margin-right: 5%;
+  }
+}

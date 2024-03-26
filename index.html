@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Título da página-->
+  <title>Portfólio - Roberto Yuri</title>
+  <!--Link do arquivo css de estilo-->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+  <div id="topo"><!--Div extra pra ser link com o final da página--></div>
+
+  <!--O cabeçalho da página fica sempre visível na tela-->
+  <div class="container fixed">
+    <div class="linha"> <!--Linha divisória--> </div>
+    <header class="">
+      <h1 style="text-align: center;">P<span>ortfólio -</span> R<span>oberto </span>Y<span>uri</span></h1>
+    </header>
+    <div class="linha"> <!--Linha divisória--> </div>
+  </div>
+
+  <!--Área do conteiner principal-->
+  <div class="container wrapper">
+    <!--Este menu fica fixo à esquerda da página
+      até o tamanho da janela ficar pequeno demasiado-->
+    <aside class="menu">
+      <div class="logo">
+        <a href="index.html"><img src="img/logo.jpeg" alt="logo do perfil"></a>
+      </div>
+      <nav class="menu-links" id="menu-links">
+        <ul>
+          <li><a href="index.html">Sobre Mim</a></li>
+          <li><a href="formacao.html">Formação</a></li>
+          <li><a href="portfolio.html">Portfólio</a></li>
+          <li><a href="contato.html">Contato</a></li>
+      </nav>
+    </aside>
+
+    <!--Esta parte fica movimentando ao lado do menu.
+       As imagens podem mudar a posição de acordo com o tamanho da janela-->
+    <section class="principal"> <!--Uma sessão do meu site-->
+      <div class="texto1">
+        <h1>Sobre Mim</h1>
+      </div>
+      <div class="texto"><!--Div extra pra espaçamento--></div>
+      <div class="texto2">
+        <P>Multifacetado e engenhoso, sou um profissional que se destaca pela diversidade de minhas
+          habilidades e pela profundidade de minhas competências. Dominando linguagens de programação
+          como C#, Java, Python, JavaScript, além de HTML e CSS, também possuo uma forte aptidão para
+          o design de sistemas. Além disso, minha fluência em inglês, conhecimentos de francês,
+          habilidades culinárias e talento musical, demonstram minha versatilidade e capacidade de adaptação.</p>
+      </div>
+
+      <div class="img"><img src="img/multi.jpeg" alt="Perfil do topo do site"></div>
+
+      <div class="texto1">
+        <p>Minha trajetória profissional é comparável a uma montanha-russa repleta de reviravoltas e descobertas.
+          Com um início na engenharia e uma breve incursão na gerência de projetos, encontrei minha verdadeira
+          vocação na tecnologia da informação, onde cada desafio é uma oportunidade de aprendizado e superação.</p>
+      </div>
+
+      <div class="img"> <img src="img/montanha.jpeg" alt="Perfil do topo do site"></div>
+
+      <div class="texto2">
+        <p>Entre meus feitos notáveis, destaca-se a criação de um sistema inovador de coleta automática de evidências de
+          endpoints,
+          uma ferramenta essencial em meu local de atividade atual. Este projeto não só evidencia minha habilidade
+          técnica,
+          mas também minha capacidade de antecipar necessidades e desenvolver soluções eficazes.</p>
+      </div>
+
+      <div class="img"> <img src="img/feito.jpeg" alt="Perfil do topo do site"></div>
+
+      <div class="texto1">
+        <P>Com objetivos bem definidos, busco no curto prazo aprimorar-me para assumir responsabilidades equivalentes às
+          de meu mentor.
+          A longo prazo, almejo contribuir tanto com minha expertise técnica quanto com minha liderança,
+          alternando entre o gerenciamento e a resolução direta de desafios complexos.</p>
+      </div>
+
+      <div class="img"><img src="img/objetivo.jpeg" alt="Perfil do topo do site"></div>
+
+      <div class="texto2">
+        <p>No trabalho em equipe, sou meticuloso e atencioso, sempre analisando as situações antes de contribuir e
+          garantindo que todos os detalhes sejam considerados. Minha abordagem cuidadosa e atenção aos “caminhos não tão
+          felizes”
+          são fundamentais para o sucesso dos projetos dos quais participo.</p>
+      </div>
+
+      <div class="img"> <img src="img/equipe.jpeg" alt="Perfil do topo do site"></div>
+
+      <div class="texto1">
+        <p>Curiosamente, foi o hobby de criar jogos que me introduziu ao mundo da programação e, por fim,
+          me conduziu à carreira que hoje abraço com paixão. Esse interesse pessoal não apenas influenciou minha escolha
+          profissional,
+          mas continua a enriquecer minha perspectiva e abordagem no campo da tecnologia.</p>
+      </div>
+
+      <div class="img"> <img src="img/jogo.jpeg" alt="Perfil do topo do site"></div>
+      <br><br>
+  </div>
+  </section>
+  </div>
+
+  <!--Código pra criar o efeito do menu
+    (enquando o mouse está no item,
+    ele vai destacar este e tirar foco dos outros itens)-->
+  <script>
+    var listItems = document.querySelectorAll('#menu-links li');
+
+    for (var i = 0; i < listItems.length; i++) {
+      listItems[i].addEventListener('mouseover', function () {
+        for (var j = 0; j < listItems.length; j++) {
+          if (listItems[j] !== this) {
+            listItems[j].classList.add('dim');
+          }
+        }
+      });
+
+      listItems[i].addEventListener('mouseout', function () {
+        for (var j = 0; j < listItems.length; j++) {
+          listItems[j].classList.remove('dim');
+        }
+      });
+    }    
+  </script>
+
+  <!--Código comentado, usado só pra saber quantos pixels tem na janela do navegador durante o desenvolvimento
+    window.onload = function () {
+      var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      document.getElementById('topo').innerHTML += ": " + width + "px";
+    }-->
+
+  <!--Rodapé-->
+  <footer class="">
+    <div class="linha"> <!--Linha divisória--> </div>
+    <!--Link pra subir pro topo da página-->
+    <h3><a href="#topo">Ir pro topo</a></h3>
+    <div class="linha"> <!--Linha divisória--> </div>
+  </footer>
+</body>
+
+</html>
