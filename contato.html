@@ -46,11 +46,11 @@
           <h2 class="titulo">Entre em contato</h2>
           <br>
           <!--Para evitar e-mails desnecessários, não será preenchido o e-mail destinatário-->
-          <form action="">
-            <input type="texto" name="" id="" placeholder="Seu nome completo" required>
-            <input type="texto" name="" id="" placeholder="Seu e-mail" required>
+          <form action="" onsubmit="handleSubmit(event)">
+            <input type="texto" name="" id="" placeholder="*Seu nome completo" required>
+            <input type="texto" name="" id="" placeholder="*Seu e-mail" required>
             <input type="texto" name="" id="" placeholder="Seu celular">
-            <textarea name="" id="" placeholder="Sua mensagem" required></textarea>
+            <textarea name="" id="" placeholder="*Sua mensagem" required></textarea>
             <div class="enviar"><input type="submit" value="ENVIAR"></div>
           </form>
         </div>
@@ -80,6 +80,19 @@
         }
       });
     }    
+
+
+    // Mostra uma mensagem para confirmar o envio do e-mail
+    function handleSubmit(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            var form = document.querySelector('.formulario');
+            form.style.display = 'none'; // Esconde o formulário
+            var message = document.createElement('h2'); // Cria um novo elemento h2
+            message.textContent = 'Obrigado por entrar em contato!'; // Define o texto
+            message.style.textAlign = 'center'; // Centraliza o texto
+            message.style.marginTop = '25px'; // Adiciona uma margem superior
+            document.querySelector('.principal').appendChild(message); // Adiciona o texto
+    }
   </script>
 
   <!--Código comentado, usado só pra saber quantos pixels tem na janela do navegador durante o desenvolvimento
