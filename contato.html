@@ -38,7 +38,7 @@
           <li><a href="contato.html">Contato</a></li>
       </nav>
     </aside>
-
+    
     <!--Formulário para preenchimento das informações para entrar em contato-->
     <section class="principal"> <!--Uma sessão do meu site-->
       <section class="formulario" style="text-align: center;">
@@ -47,14 +47,13 @@
           <br>
           <!--Para evitar e-mails desnecessários, não será preenchido o e-mail destinatário-->
           <form action="" onsubmit="handleSubmit(event)">
-            <input type="texto" name="" id="" placeholder="*Nome completo" required
+            <input type="text" name="" id="" placeholder="*Nome completo" required
               oninvalid="this.setCustomValidity('Por favor, preencha o seu nome completo!')" 
               oninput="this.setCustomValidity('')">
-            <input type="email" name="" id="" placeholder="*E-mail" required
+            <input type="text" name="" id="" placeholder="*E-mail" required
               oninvalid="this.setCustomValidity('Por favor, insira seu e-mail!')"
               oninput="this.setCustomValidity('')">
-            <input type="tel" name="" id="" placeholder="Telefone"
-              pattern="^\([1-9]{2}\) (?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$"> <!--Validando números-->
+            <input type="tel" name="" id="" placeholder="Telefone"> <!--Validando números-->
             <textarea name="" id="" placeholder="*Mensagem" required
               oninvalid="this.setCustomValidity('Por favor, escreva sua mensagem')"
               oninput="this.setCustomValidity('')"></textarea>
