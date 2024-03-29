@@ -47,10 +47,17 @@
           <br>
           <!--Para evitar e-mails desnecessários, não será preenchido o e-mail destinatário-->
           <form action="" onsubmit="handleSubmit(event)">
-            <input type="texto" name="" id="" placeholder="*Seu nome completo" required>
-            <input type="texto" name="" id="" placeholder="*Seu e-mail" required>
-            <input type="texto" name="" id="" placeholder="Seu celular">
-            <textarea name="" id="" placeholder="*Sua mensagem" required></textarea>
+            <input type="texto" name="" id="" placeholder="*Nome completo" required
+              oninvalid="this.setCustomValidity('Por favor, preencha o seu nome completo!')" 
+              oninput="this.setCustomValidity('')">
+            <input type="email" name="" id="" placeholder="*E-mail" required
+              oninvalid="this.setCustomValidity('Por favor, insira seu e-mail!')"
+              oninput="this.setCustomValidity('')">
+            <input type="tel" name="" id="" placeholder="Telefone"
+              pattern="^\([1-9]{2}\) (?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$"> <!--Validando números-->
+            <textarea name="" id="" placeholder="*Mensagem" required
+              oninvalid="this.setCustomValidity('Por favor, escreva sua mensagem')"
+              oninput="this.setCustomValidity('')"></textarea>
             <div class="enviar"><input type="submit" value="ENVIAR"></div>
           </form>
         </div>
